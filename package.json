@@ -1,0 +1,19 @@
+{
+  "name": "docs-yiyuapi",
+  "version": "1.0.0",
+  "description": "呓语API的文档",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "呓语API"
+  ],
+  "author": "zzy",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.62"
+  }
+}
