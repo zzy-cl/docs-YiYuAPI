@@ -12,6 +12,6 @@
 | 接口地址     | https://api.zhaozeyu.top/v1        |
 | GitHub地址 | https://github.com/zzy-cl/YIYU-API |
 
-::: tip 提示
+::: tip
 本站接口仅供学习交流使用，如有侵权请联系站长删除！
 :::

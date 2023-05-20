@@ -2,7 +2,7 @@
 
 ## 短视频去水印
 
-::: tip 提示
+::: tip
 支持列表：抖音、快手
 :::
 
@@ -46,7 +46,7 @@ fetch("https://api.zhaozeyu.top/v1/video?url=https://v.douyin.com/UdV8ydj")
 
 ### 返回参数
 
-::: tip 提示
+::: tip
 不同视频平台的链接调用接口返回的数据结构一致，因为平台差异，如果某一个参数缺失，返回值会以`无`代替。
 :::
 

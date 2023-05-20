@@ -18,7 +18,14 @@ export default defineUserConfig({
         sidebarDepth: 1,
         editLink: false,
         lastUpdatedText: '最近更新于',
-        backToHome: '返回首页'
+        contributorsText: '贡献者',
+        backToHome: '返回首页',
+        openInNewWindow: '在新窗口中打开',
+        notFound: ['页面丢失啦~', '您好像迷路啦~', '您怎么来到这里啦？', '您已失联，速速返航！', '这里好像没什么东西。'],
+        tip: '提示',
+        warning: '注意',
+        danger: '警告',
+
     }),
     plugins: [searchPlugin({
         locales: {
