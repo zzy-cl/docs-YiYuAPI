@@ -9,7 +9,7 @@ export default defineUserConfig({
     theme: defaultTheme({
         logo: '/images/logo.svg',
         navbar: [{text: '指南', link: '/guide/'}],
-        repo: 'https://github.com/zzy-cl/YIYU-API',
+        repo: 'https://github.com/zzy-cl/YiYuAPI',
         sidebar: {
             '/guide/': [{
                 text: '指南', children: ['/guide/index.md', '/guide/rewm.md', '/guide/changelog.md']

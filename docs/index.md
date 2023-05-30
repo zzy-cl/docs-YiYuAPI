@@ -8,7 +8,7 @@ actions:
     link: /guide/
     type: secondary
   - text: GitHub
-    link: https://github.com/zzy-cl/YIYU-API
+    link: https://github.com/zzy-cl/YiYuAPI
     type: secondary
 features:
   - title: 规范划一
