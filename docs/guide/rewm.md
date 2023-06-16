@@ -1,9 +1,13 @@
+::: tip
+经由接口优化，短视频去水印和图集提取已经统一为一个接口。
+:::
+
 # 视频水印
 
 ## 短视频清除水印
 
 ::: tip
-支持列表：抖音、快手
+支持列表：抖音、~~快手~~、皮皮虾、最右
 
 体验地址：[https://zzy-lcy.netlify.app/](https://zzy-lcy.netlify.app/)
 :::
@@ -15,82 +19,13 @@
 ### 接口地址
 
 ```text
-https://api.zhaozeyu.top/v1/videos
+https://api.zhaozeyu.top/v1/short-video
 ```
 
 ### 请求示例
 
 ```javascript
-fetch("https://api.zhaozeyu.top/v1/videos?url=https://v.douyin.com/UdV8ydj", requestOptions)
-   .then(response => response.text())
-   .then(result => console.log(result))
-   .catch(error => console.log('error', error));
-```
-
-### 参数说明
-
-::: tip
-url 支持携带文案，本接口自带正则匹配分享链接中的 url 功能。
-:::
-
-| 参数  | 类型     | 必填 | 说明   |
-|-----|--------|----|------|
-| url | string | 是  | 视频地址 |
-
-### 返回数据
-
-```json
-{
-  "code": 0,
-  "message": "抖音视频解析成功",
-  "data": {
-    "title": "不良人第六季大结局，李星云姬如雪吻戏看哭了#不良人6大结局 #画江湖之不良人",
-    "author": "一飛",
-    "avatar": "https://p3.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_28a15e1b5e4b71e3cfc1b13522cdf261.webp?from=116350172",
-    "cover": "https://p3-sign.douyinpic.com/tos-cn-p-0015/f97d560b43ee486ab7bdbc8e9090dc2d_1683770500~tplv-dy-360p.webp?x-expires=1685790000&x-signature=SdZSDfN4VnnWJ1%2B8e00DCHEBato%3D&from=3213915784&se=false&biz_tag=feed_cover&l=20230520192201D51A35991B2B407A357D",
-    "music": "https://sf3-cdn-tos.douyinstatic.com/obj/ies-music/7231739219692112701.mp3",
-    "video": "https://v3-dy-o.zjcdn.com/4d4f66b3c4777beaf063303968af2330/6468bb96/video/tos/cn/tos-cn-ve-15c001-alinc2/oQyQCjcjbB9IiAfeLABEKtUQELADgONZ9YTzhz/?a=1128&ch=26&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C3&cv=1&br=759&bt=759&cs=2&ds=6&ft=F-_ezGTe0BN16UvjVQ7MAKK7usixsGaUaglc&mime_type=video_mp4&qs=11&rc=OGY0OjU1ZWY4Njs1PDg5aUBpandmbGU6Zmc3azMzNGkzM0BgMi82Li1jXi8xLTVhMGM1YSNtMGRlcjRnbGJgLS1kLS9zcw%3D%3D&l=20230520192201D51A35991B2B407A357D&btag=e000a0000&cc=1f"
-  }
-}
-```
-
-### 返回参数
-
-::: tip
-不同视频平台的链接调用接口返回的数据结构一致，因为平台差异，如果某一个参数缺失，返回值会以`无`代替。
-:::
-
-| 参数     | 类型     | 说明   |
-|--------|--------|------|
-| title  | string | 视频标题 |
-| author | string | 视频作者 |
-| avatar | string | 作者头像 |
-| cover  | string | 视频封面 |
-| music  | string | 背景音乐 |
-| video  | string | 视频地址 |
-
-## 短视频提取图集
-
-::: tip
-支持列表：抖音、快手
-
-体验地址：[https://zzy-lcy.netlify.app/](https://zzy-lcy.netlify.app/)
-:::
-
-::: warning
-快手短视频会存在滑块验证，目前只能在本地运行才能正常解析！
-:::
-
-### 接口地址
-
-```text
-https://api.zhaozeyu.top/v1/images
-```
-
-### 请求示例
-
-```javascript
-fetch("https://api.zhaozeyu.top/v1/images?url=https://v.douyin.com/UH1M8PD", requestOptions)
+fetch("https://api.zhaozeyu.top/v1/short-video?url=https://v.douyin.com/UTx1ghY/",{method:'get'})
    .then(response => response.text())
    .then(result => console.log(result))
    .catch(error => console.log('error', error));
@@ -113,20 +48,13 @@ url 支持携带文案，本接口自带正则匹配分享链接中的 url 功�
     "code": 0,
     "message": "抖音视频解析成功",
     "data": {
-        "title": "不良人高清壁纸。画江湖之不良人——［女帝-将臣-奥姑］精选优质壁纸#不良人李星云成为造局人 #高清壁纸 #国漫崛起 #图文伙伴计划 #不良人女帝",
-        "author": "冒牌王子🤴",
-        "avatar": "https://p26.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-i-0813_d4b754e790c74554b8149b37029db58a.webp?from=116350172",
-        "music": "https://sf6-cdn-tos.douyinstatic.com/obj/ies-music/7214342729461959483.mp3",
-        "images": [
-            "https://p9-sign.douyinpic.com/tos-cn-i-0813c001/f6158200cd734120b0f4e3a3baaa13e5~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=6fmHdMdcZSRTNdLm%2BLpSSXvYB%2Bg%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19",
-            "https://p3-sign.douyinpic.com/tos-cn-i-0813/94fca767b9384c43965a6c61287a25b0~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=47hPLky%2Be3RhdraZ7gZ93mAJLug%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19",
-            "https://p3-sign.douyinpic.com/tos-cn-i-0813c001/c9ddc9c679b347dda88d4dc588621790~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=%2Bqz1%2Fqaf8kf5x4AVecAmViaSPOE%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19",
-            "https://p26-sign.douyinpic.com/tos-cn-i-0813/bb8115db27a94c1f9402c94cc1eb39d9~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=ZvIgP1%2FlRv13LQXsKsoAgo%2F%2FIn4%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19",
-            "https://p3-sign.douyinpic.com/tos-cn-i-0813/7320ee5f982e41fab32c3f2c1ce076b5~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=bLOfoVEJAVxeA7B3ccsJfb96F5I%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19",
-            "https://p6-sign.douyinpic.com/tos-cn-i-0813c001/d8f3960095e14782905ec163fa299695~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=uCAU3Ba79tp%2F2YqR8amU6OjGHMQ%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19",
-            "https://p6-sign.douyinpic.com/tos-cn-i-0813/b5a3cef5322249a18eec5d966f90465e~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=koroTNFIX7Kx3bTYN6o4A%2BP52cQ%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19",
-            "https://p6-sign.douyinpic.com/tos-cn-i-0813c001/1676ea0229e7420d9f791b4fb7b6ec65~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=cNz0ART2cs1nUBOQ%2BPq9p4xizvk%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19",
-            "https://p26-sign.douyinpic.com/tos-cn-i-0813/f30c2ebdbde144f19f07f3124cd1c564~tplv-dy-aweme-images:q75.webp?x-expires=1686679200&x-signature=liPv6RySbkG2SO1kqIPxm2oC8vA%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&biz_tag=aweme_images&l=20230531020103ABBC96BBE7A916279A19"
+        "title": "报告：我今天 超级 超级 想你😘 #治愈系动画",
+        "author": "壹个星球.",
+        "avatar": "https://p26.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_ab1956eb9bd2d9623f573be38fb8bf04.webp?from=116350172",
+        "cover": "https://p26-sign.douyinpic.com/tos-cn-p-0015/a46aedd2ba764dc3acd6bf1385dfd93c_1686832075~tplv-dy-360p.webp?x-expires=1688108400&x-signature=JLgOX7EtDjq0fB%2FAxX5VSYwz0y4%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=origin_cover&biz_tag=aweme_video&l=20230616155928587460E5FBC9D2049EB1",
+        "music": "https://sf3-cdn-tos.douyinstatic.com/obj/ies-music/7225519709687401271.mp3",
+        "video": [
+            "https://v1-cold1.douyinvod.com/010e55097a07d14aa7168366a9150984/648c247a/video/tos/cn/tos-cn-ve-15c001-alinc2/ow9BN8AIgzzberisIkZSAKNLXjQAIE0knwDfDg/?a=1128&ch=26&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C3&cv=1&br=1952&bt=1952&cs=0&ds=6&ft=nK5C30071u7vpihBH6xRfIMWN4BO5Ta25xHz7tG&mime_type=video_mp4&qs=0&rc=M2g5Zjo4NWY0ZTc8Ozw0M0Bpamk3bWQ6ZnZqbDMzNGkzM0A0Ni81Ni42XzMxMzFiMDJiYSNmbjRxcjRvMzJgLS1kLWFzcw%3D%3D&l=20230616155928587460E5FBC9D2049EB1&btag=e00088000"
         ]
     }
 }
@@ -145,4 +73,80 @@ url 支持携带文案，本接口自带正则匹配分享链接中的 url 功�
 | avatar | string | 作者头像 |
 | cover  | string | 视频封面 |
 | music  | string | 背景音乐 |
-| images | array  | 图片数组 |
+| video  | object | 视频数组 |
+
+## 短视频提取图集
+
+::: tip
+支持列表：抖音、~~快手~~、皮皮虾、最右
+
+体验地址：[https://zzy-lcy.netlify.app/](https://zzy-lcy.netlify.app/)
+:::
+
+::: warning
+快手短视频会存在滑块验证，目前只能在本地运行才能正常解析！
+:::
+
+### 接口地址
+
+```text
+https://api.zhaozeyu.top/v1/short-video
+```
+
+### 请求示例
+
+```javascript
+fetch("https://api.zhaozeyu.top/v1/short-video?url=https://v.douyin.com/UTCpqMP/", {method:'get'})
+   .then(response => response.text())
+   .then(result => console.log(result))
+   .catch(error => console.log('error', error));
+```
+
+### 参数说明
+
+::: tip
+url 支持携带文案，本接口自带正则匹配分享链接中的 url 功能。
+:::
+
+| 参数  | 类型     | 必填 | 说明   |
+|-----|--------|----|------|
+| url | string | 是  | 视频地址 |
+
+### 返回数据
+
+```json
+{
+    "code": 0,
+    "message": "抖音图集解析成功",
+    "data": {
+        "title": "灵狐少女|壁纸。万物有灵，柔情以待！#AI插画 #动漫美女 #动漫壁纸 #手机壁纸 #狐妖",
+        "author": "清子（壁纸馆）",
+        "avatar": "https://p3.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_8e560a5d6f2737fbc97eecb0637695e9.webp?from=116350172",
+        "music": "https://sf3-cdn-tos.douyinstatic.com/obj/ies-music/7206654696994409274.mp3",
+        "images": [
+            "https://p3-sign.douyinpic.com/tos-cn-i-0813/c5f1c8816d74437ca57b6f0946f356ac~tplv-dy-lqen-new:1280:2304:q75.webp?x-expires=1688112000&x-signature=lrGqUsxT0Wqmx6PzcnBlmMJgJA8%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=image&biz_tag=aweme_images&l=202306161632502E4C6E3A9BCF2800D2A0",
+            "https://p3-sign.douyinpic.com/tos-cn-i-0813c001/0223b4e785e140b48a8f1a3d23e9d735~tplv-dy-lqen-new:1280:2304:q75.webp?x-expires=1688112000&x-signature=EWmoOl%2FdG0drAGu%2Be%2BX7nn77QzM%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=image&biz_tag=aweme_images&l=202306161632502E4C6E3A9BCF2800D2A0",
+            "https://p3-sign.douyinpic.com/tos-cn-i-0813c001/34fd9b7a5d594f78a35fc4c51e202895~tplv-dy-lqen-new:1408:2048:q75.webp?x-expires=1688112000&x-signature=9pekh4kZh%2BA%2FkQfvhlddPaw48RA%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=image&biz_tag=aweme_images&l=202306161632502E4C6E3A9BCF2800D2A0",
+            "https://p3-sign.douyinpic.com/tos-cn-i-0813/dfa24142b7fa491e85d39473bb80267f~tplv-dy-lqen-new:1408:2048:q75.webp?x-expires=1688112000&x-signature=EqjT0cMLsYB%2Bv6%2FJTEnMjBSqQtw%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=image&biz_tag=aweme_images&l=202306161632502E4C6E3A9BCF2800D2A0",
+            "https://p3-sign.douyinpic.com/tos-cn-i-0813/71e1a2bdb2104175b67b9322710a9fcf~tplv-dy-lqen-new:1408:2048:q75.webp?x-expires=1688112000&x-signature=PHOtv9MF84N7xABliuXgMHYu50U%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=image&biz_tag=aweme_images&l=202306161632502E4C6E3A9BCF2800D2A0",
+            "https://p26-sign.douyinpic.com/tos-cn-i-0813c001/e3f28780cdf14aa9863aefc690ebf8c2~tplv-dy-lqen-new:1408:2048:q75.webp?x-expires=1688112000&x-signature=QPW4EriN9TUFD0fLkDFGuxYupsM%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=image&biz_tag=aweme_images&l=202306161632502E4C6E3A9BCF2800D2A0",
+            "https://p26-sign.douyinpic.com/tos-cn-i-0813c001/989afa4353a64c7c9af01b8dadb763d0~tplv-dy-lqen-new:1152:1664:q75.webp?x-expires=1688112000&x-signature=XxwUcbsyMOiY36iz6lMpZpQuoQs%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=image&biz_tag=aweme_images&l=202306161632502E4C6E3A9BCF2800D2A0"
+        ]
+    }
+}
+```
+
+### 返回参数
+
+::: tip
+不同视频平台的链接调用接口返回的数据结构一致，因为平台差异，如果某一个参数缺失，返回值会以`无`代替。
+:::
+
+| 参数     | 类型     | 说明   |
+|--------|--------|------|
+| title  | string | 视频标题 |
+| author | string | 视频作者 |
+| avatar | string | 作者头像 |
+| cover  | string | 视频封面 |
+| music  | string | 背景音乐 |
+| images | object | 图片数组 |
