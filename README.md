@@ -8,7 +8,7 @@
 
 | 名称       | 地址                                 |
 |----------|------------------------------------|
-| 文档地址     | https://docs.zhaozeyu.top          |
+| 文档地址     | https://api-docs.zhaozeyu.top      |
 | 接口地址     | https://api.zhaozeyu.top/v1        |
 | GitHub地址 | https://github.com/zzy-cl/YIYU-API |
 
