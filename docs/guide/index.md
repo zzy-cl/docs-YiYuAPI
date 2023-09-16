@@ -19,7 +19,7 @@ express：4+
 
 | 名称   | 地址                                                                               |
 |------|----------------------------------------------------------------------------------|
-| 文档地址 | [https://api-docs.zhaozeyu.top/](https://api-docs.zhaozeyu.top/)                 |
+| 文档地址 | [https://api-docs.zhaozeyu.top](https://api-docs.zhaozeyu.top)                   |
 | 文档仓库 | [https://github.com/zzy-cl/docs-YiYuAPI](https://github.com/zzy-cl/docs-YiYuAPI) |
 | 接口地址 | [https://api.zhaozeyu.top/v1](https://api.zhaozeyu.top/v1)                       |
 | 接口仓库 | [https://github.com/zzy-cl/YiYuAPI](https://github.com/zzy-cl/YiYuAPI)           |

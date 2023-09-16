@@ -9,7 +9,7 @@
 ::: tip
 支持列表：抖音、~~快手~~、皮皮虾、最右
 
-体验地址：[https://zzy-rw.netlify.app/](https://zzy-rw.netlify.app/)
+体验地址：[https://zzy-rw.netlify.app](https://zzy-rw.netlify.app)
 :::
 
 ::: warning
@@ -80,7 +80,7 @@ url 支持携带文案，本接口自带正则匹配分享链接中的 url 功�
 ::: tip
 支持列表：抖音、~~快手~~、皮皮虾、最右
 
-体验地址：[https://zzy-rw.netlify.app/]https://zzy-rw.netlify.app/)
+体验地址：[https://zzy-rw.netlify.app]https://zzy-rw.netlify.app)
 :::
 
 ::: warning
